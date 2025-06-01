@@ -1,25 +1,19 @@
 # Natural Language to SQL Converter
 
-This application converts natural language questions into SQL queries using Hugging Face's free API. It provides a user-friendly interface built with Streamlit where users can input their database schema and questions in plain English to get corresponding SQL queries.
+A simple application that converts natural language questions into SQL queries using Hugging Face's API. Built with Streamlit, it provides a clean interface where users can input questions in plain English to get corresponding SQL queries.
 
 ## Features
 
-- Convert natural language questions to SQL queries using FLAN-T5-XL model
-- Database schema management:
-  - Add tables and columns through the UI
-  - Upload schema as JSON
-  - Download current schema
-  - View and manage schema in real-time
+- Convert natural language questions to SQL queries using Hugging Face's API
 - Clean and intuitive user interface
 - Example questions for reference
-- Copy-to-clipboard functionality for generated queries
 - Responsive design
-- Free to use with Hugging Face's API
+- Fast and accurate SQL generation
 
 ## Prerequisites
 
 - Python 3.7+
-- Hugging Face API key (free)
+- Hugging Face API token
 
 ## Installation
 
@@ -34,9 +28,9 @@ cd natural-language-to-sql
 pip install -r requirements.txt
 ```
 
-3. Create a `.env` file in the project root directory and add your Hugging Face API key:
+3. Create a `.env` file in the project root directory and add your Hugging Face API token:
 ```
-HUGGINGFACE_API_KEY=your_api_key_here
+HUGGINGFACE_API_TOKEN=your_token_here
 ```
 
 ## Usage
@@ -48,24 +42,9 @@ streamlit run app.py
 
 2. Open your web browser and navigate to the URL shown in the terminal (usually http://localhost:8501)
 
-3. Set up your database schema:
-   - Use the sidebar to add tables and columns
-   - Or upload a JSON schema file
-   - You can also download your current schema for later use
+3. Enter your question in natural language in the text area
 
-4. Enter your question in natural language in the text area
-
-5. Click "Convert to SQL" to generate the SQL query
-
-## Example Schema
-```json
-{
-    "customers": ["customer_id", "name", "email", "join_date"],
-    "orders": ["order_id", "customer_id", "order_date", "total_amount"],
-    "products": ["product_id", "name", "category", "price"],
-    "order_items": ["order_id", "product_id", "quantity", "unit_price"]
-}
-```
+4. Click "Convert to SQL" to generate the SQL query
 
 ## Example Questions
 
@@ -77,16 +56,17 @@ streamlit run app.py
 
 ## Getting Started with Hugging Face
 
-1. Create a free account on [Hugging Face](https://huggingface.co/join)
-2. Get your API key from [Hugging Face's settings](https://huggingface.co/settings/tokens)
-3. The free tier includes:
-   - Access to thousands of open-source models
-   - Rate limits apply (but generous for personal use)
-   - No credit card required
+1. Create an account on [Hugging Face](https://huggingface.co)
+2. Get your API token from your account settings
+3. Hugging Face offers:
+   - Access to state-of-the-art models
+   - Easy-to-use API
+   - Free tier available
+   - High-quality results
 
 ## Security Note
 
-Never commit your `.env` file or expose your API key. The `.env` file is included in `.gitignore` by default.
+Never commit your `.env` file or expose your API token. The `.env` file is included in `.gitignore` by default.
 
 ## License
 
